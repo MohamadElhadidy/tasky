@@ -17,15 +17,13 @@ Route::middleware(['guest'])->group(function () {
 
     Route::get('/password/reset-request', [ForgotPasswordController::class, 'create'])->name('password-reset-request');
     Route::get('/password/reset', [ResetPasswordController::class, 'create']);
-
-
 });
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::view('/email/verify', 'auth.verify')->name('verification.notice');
+
     Route::get('/', function () {
         return view('welcome');
     });
 });
-
-
