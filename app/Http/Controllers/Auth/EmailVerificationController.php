@@ -18,8 +18,18 @@ class EmailVerificationController extends Controller
 
     public function store()
     {
-        request()->user()->sendEmailVerificationNotification();
-        return back()->with('message', 'Verification link sent!');
+        try {
+    request()->user()->sendEmailVerificationNotification();
+    return response()->json(['message' => 'Verification email sent successfully.']);
+} catch (\Exception $e) {
+            dd($e);
+    // Log the exception for debugging
+    \Log::error('Failed to send email verification: ' . $e->getMessage());
+
+    return response()->json([
+        'error' => 'Failed to send email verification. Please try again later.',
+    ], 500);
+}
     }
 
     public function update(EmailVerificationRequest $request)
