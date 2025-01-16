@@ -237,11 +237,11 @@ img {
 
 .button-blue,
 .button-primary {
-    background-color: #2d3748;
-    border-bottom: 8px solid #2d3748;
-    border-left: 18px solid #2d3748;
-    border-right: 18px solid #2d3748;
-    border-top: 8px solid #2d3748;
+    background-color: #E74A3A;
+    border-bottom: 8px solid #E74A3A;
+    border-left: 18px solid #E74A3A;
+    border-right: 18px solid #E74A3A;
+    border-top: 8px solid #E74A3A;
 }
 
 .button-green,
@@ -265,7 +265,7 @@ img {
 /* Panels */
 
 .panel {
-    border-left: #2d3748 solid 4px;
+    border-left: #E74A3A solid 4px;
     margin: 21px 0;
 }
 
