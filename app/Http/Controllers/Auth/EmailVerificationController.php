@@ -20,7 +20,7 @@ class EmailVerificationController extends Controller
     {
         try {
     request()->user()->sendEmailVerificationNotification();
-    return response()->json(['message' => 'Verification email sent successfully.']);
+    return  back()->with('message', 'Verification link sent!');
 } catch (\Exception $e) {
             dd($e);
     // Log the exception for debugging
