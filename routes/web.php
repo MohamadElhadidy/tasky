@@ -44,3 +44,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('welcome');
     })->name('home');
 });
+
+
+
+
+Route::get('/test-email', function () {
+    \Illuminate\Support\Facades\Mail::raw('This is a test email.', function ($message) {
+        $message->to('your_email@example.com')->subject('Test Email');
+    });
+    return 'Email sent';
+});
