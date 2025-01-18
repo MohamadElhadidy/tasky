@@ -50,7 +50,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/test-email', function () {
     \Illuminate\Support\Facades\Mail::raw('This is a test email.', function ($message) {
-        $message->to('your_email@example.com')->subject('Test Email');
+        $message->to('elhadidy384@gmail.com')->subject('Test Email');
     });
     return 'Email sent';
 });
